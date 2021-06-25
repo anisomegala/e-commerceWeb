@@ -12,6 +12,33 @@ const firebaseConfig = {
     measurementId: "G-NT53VLK6TE"
   };
 
+  export const createUserProfileDocument = async (userAuth, addtionalData) => {
+    if (!userAuth) return;
+
+      const userRef = firestore.doc(`users/${userAuth.uid}`);
+      const snapShot =  await userRef.get();
+      console.log(snapShot);
+
+      if (!snapShot.exists) {
+        const { displayName, email } = userAuth;
+        const creatAt = new Date();
+
+        try {
+          await userRef.set({
+            displayName,
+            email,
+            creatAt,
+            ...addtionalData
+          })
+        }catch(err) {
+          console.log('Something went wrong', err.message);
+        }
+      }
+
+      return userRef;
+  };
+
+
   firebase.initializeApp(firebaseConfig);
 
   export const auth = firebase.auth();
@@ -20,11 +47,9 @@ const firebaseConfig = {
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.setCustomParameters({ prompt: 'select_account'});
 
-  const provider2 = new firebase.auth.FacebookAuthProvider();
-  provider2.setCustomParameters({ prompt: 'select_account'});
 
   export const signInWithGoogle = () => auth.signInWithPopup(provider);
-  export const signInWithFacebook = () => auth.signInWithPopup(provider2);
+
 
   export default firebase;
 
