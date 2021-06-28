@@ -1,8 +1,8 @@
 import firebase from 'firebase/app';
-import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/auth';
 
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyDBw0zgB_doAXz-U3ykqaBQZYPNjP49EyM",
     authDomain: "mystore-asg.firebaseapp.com",
     projectId: "mystore-asg",
@@ -17,7 +17,7 @@ const firebaseConfig = {
 
       const userRef = firestore.doc(`users/${userAuth.uid}`);
       const snapShot =  await userRef.get();
-      console.log(snapShot);
+    
 
       if (!snapShot.exists) {
         const { displayName, email } = userAuth;
@@ -45,7 +45,7 @@ const firebaseConfig = {
   export const firestore = firebase.firestore();
 
   const provider = new firebase.auth.GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: 'select_account'});
+  provider.setCustomParameters({ 'prompt': 'select_account'});
 
 
   export const signInWithGoogle = () => auth.signInWithPopup(provider);
