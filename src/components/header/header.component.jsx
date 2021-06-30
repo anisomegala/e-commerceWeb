@@ -13,26 +13,26 @@ const Header = ({ currentUser }) => (
         </Link>
         <div className='options-links'> 
             <Link className='option' to='/shop'>
-                Shop
+                SHOP
             </Link>
             <Link className='option' to='/contact'>
-                Contact
+                CONTACT
             </Link>
-            {currentUser ? 
+            {currentUser ? (
                 <div className='option' onClick={() => auth.signOut()}> 
-                    Sing Out
+                    SIGN OUT
                 </div>
-                 : 
+            ) : ( 
                 <Link className='option' to='/signin'> 
-                    Sign In
+                    SIGN IN
                 </Link>
-                }
+            )}
         </div>
     </div>
 );
 
 const mapStateToProps = state => ({
-    currentUser: state.user.userReducer
+    currentUser: state.user.currentUser
 })
 
 export default connect(mapStateToProps)(Header);

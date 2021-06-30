@@ -2,12 +2,12 @@
   min-width: 30%;
   height: 250px;
   flex: 1 1 auto;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 10px solid rgb(232, 230, 230);
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 7.5px 15px;
+  margin: 0 0.3px 0.3px;
   overflow: hidden;
 
   &:hover {
@@ -35,11 +35,11 @@
   }
 
   &:first-child {
-    margin-right: 7.5px;
+    margin-right: 0.5px;
   }
 
   &:last-child {
-    margin-left: 7.5px;
+    margin-left: 0.5px;
   }
 
   .content {
