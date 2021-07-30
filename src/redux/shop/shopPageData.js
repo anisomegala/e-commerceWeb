@@ -1,8 +1,8 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  bluzka: {
     id: 1,
-    title: 'Hats',
-    routeName: 'hats',
+    title: 'Bluzka',
+    routeName: 'bluzka',
     items: [
       {
         id: 1,
@@ -60,10 +60,10 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  tunika: {
     id: 2,
-    title: 'Sneakers',
-    routeName: 'sneakers',
+    title: 'Tunika',
+    routeName: 'tunika',
     items: [
       {
         id: 10,
@@ -115,10 +115,10 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  sukienka: {
     id: 3,
-    title: 'Jackets',
-    routeName: 'jackets',
+    title: 'Sukienka',
+    routeName: 'sukienka',
     items: [
       {
         id: 18,
@@ -152,10 +152,10 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  spodnie: {
     id: 4,
-    title: 'Womens',
-    routeName: 'womens',
+    title: 'Spodnie',
+    routeName: 'spodnie',
     items: [
       {
         id: 23,
@@ -201,10 +201,10 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  płaszcz: {
     id: 5,
-    title: 'Mens',
-    routeName: 'mens',
+    title: 'Płaszcz',
+    routeName: 'płaszcz',
     items: [
       {
         id: 30,
@@ -244,6 +244,6 @@ const SHOP_DATA = [
       }
     ]
   }
-];
+};
 
 export default SHOP_DATA;
