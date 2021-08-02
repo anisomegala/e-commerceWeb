@@ -12,18 +12,16 @@ const StripeCheckoutButton = ({ price }) => {
     return (
         <StripeCheckout
             label='Pay Now'
-            name='EWANIEL Clothing App'
+            name='OWO OKOKO SHOP'
             billingAddress
             shippingAddress
-            allowRememberMe
             description={`The total is $${price}`}
             amount={priceStripe}
             panelLabel='Pay Now'
             token={onToken}
             stripeKey={publishableKey}
-            currency="PLN"
         />
-    )
+    );
 };
 
 export default StripeCheckoutButton;
