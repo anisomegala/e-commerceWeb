@@ -2,6 +2,7 @@
   min-width: 30%;
   height: 250px;
   flex: 1 1 auto;
+
   border-radius: 2px;
   display: flex;
   align-items: center;
@@ -11,6 +12,8 @@
 
   &:hover {
     cursor: pointer;
+    border: 1px solid rgb(148, 145, 145);
+    border-radius: 5px;
 
     & .background-image {
       transform: scale(1.1);
