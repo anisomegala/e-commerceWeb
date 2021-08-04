@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink, LogoSvg} from './header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer,  OptionLink, LogoSvg } from './header.styles';
 
 
 import { auth } from '../../firebase/firebase.utils';
@@ -25,9 +25,9 @@ const Header = ({ currentUser, hidden }) => (
                 CONTACT
             </OptionLink>
             {currentUser ? (
-                <OptionDiv  onClick={() => auth.signOut()}> 
+                <OptionLink as='div'  onClick={() => auth.signOut()}> 
                     SIGN OUT
-                </OptionDiv>
+                </OptionLink>
             ) : ( 
                 <OptionLink className='option' to='/signin'> 
                     SIGN IN
